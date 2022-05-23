@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<meta charset="UTF-8">
+<title>Update user</title>
+</head>
+<body>
+<form action="#" th:action="@{/user-update}" th:object="${user}" method="post">
+    <table>
+        <tbody>
+        <tr>
+            <td>ID:</td>
+            <td>
+                <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
+            </td>
+        </tr>
+        <tr>
+            <td>First name:</td>
+            <td>
+                <input type="text" th:field="*{firstName}" id="firstName" placeholder="First Name">
+            </td>
+        </tr>
+        <tr>
+            <td>Last name:</td>
+            <td>
+                <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
+            </td>
+        </tr>
+        <tr>
+            <td>Age:</td>
+            <td>
+                <input type="text" th:field="*{age}" id="age" placeholder="Age">
+            </td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td>
+                <input type="text" th:field="*{email}" id="email" placeholder="Email">
+            </td>
+        </tr>
+        <tr>
+            <td align="right" colspan="2">
+                <input type="submit" value="Update User">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+</body>
+</html>
