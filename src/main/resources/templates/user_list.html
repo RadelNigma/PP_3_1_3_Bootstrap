@@ -5,6 +5,11 @@
     <title>Users</title>
 </head>
 <body>
+<form th:action="@{/logout}" method="POST" name="logoutForm"
+      id="logout">
+    <input type="submit" value="Logout">
+</form>
+<br>
 <div th:switch="${users}">
     <h2 th:case="null">No users found!</h2>
     <div th:case="*">
@@ -33,7 +38,7 @@
             </tbody>
         </table>
     </div>
-    <p><a href="/user-create">Create user</a></p>
+    <p><a href="/admin/user-create">Create user</a></p>
 </div>
 </body>
 </html>

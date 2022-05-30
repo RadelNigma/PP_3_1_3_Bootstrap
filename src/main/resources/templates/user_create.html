@@ -5,7 +5,12 @@
     <title>Create user</title>
 </head>
 <body>
-<form action="#" th:action="@{/user-create}" th:object="${user}" method="post">
+<form th:action="@{/logout}" method="POST" name="logoutForm"
+      id="logout">
+    <input type="submit" value="Logout">
+</form>
+<br>
+<form action="#" th:action="@{/admin/user-create}" th:object="${user}" method="post">
     <table>
         <tbody>
         <tr>
@@ -33,6 +38,12 @@
             </td>
         </tr>
         <tr>
+            <td>Password:</td>
+            <td>
+                <input type="text" th:field="*{password}" id="password" placeholder="Password">
+            </td>
+        </tr>
+        <tr>
             <td align="right" colspan="2">
                 <input type="submit" value="Create User">
             </td>
@@ -40,5 +51,6 @@
         </tbody>
     </table>
 </form>
+
 </body>
 </html>

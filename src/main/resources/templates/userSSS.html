@@ -4,9 +4,9 @@
 <title>Update user</title>
 </head>
 <body>
-<form th:action="@{/logout-custom}" method="POST" name="logoutForm"
+<form th:action="@{/logout}" method="POST" name="logoutForm"
       id="logout">
-    <input type="submit"/>
+    <input type="submit" value="Logout">
 </form>
 <br>
 <form action="#" th:action="@{/admin/user-update}" th:object="${user}" method="post">
@@ -21,36 +21,31 @@
         <tr>
             <td>First name:</td>
             <td>
-                <input type="text" th:field="*{firstName}" id="firstName" placeholder="First Name">
+                <input readonly type="text" th:field="*{firstName}" id="firstName" placeholder="First Name">
             </td>
         </tr>
         <tr>
             <td>Last name:</td>
             <td>
-                <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
+                <input readonly type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
             </td>
         </tr>
         <tr>
             <td>Age:</td>
             <td>
-                <input type="text" th:field="*{age}" id="age" placeholder="Age">
+                <input readonly type="text" th:field="*{age}" id="age" placeholder="Age">
             </td>
         </tr>
         <tr>
             <td>Email:</td>
             <td>
-                <input type="text" th:field="*{email}" id="email" placeholder="Email">
+                <input readonly type="text" th:field="*{email}" id="email" placeholder="Email">
             </td>
         </tr>
         <tr>
             <td>Password:</td>
             <td>
-                <input type="text" th:field="*{password}" id="password" placeholder="Password">
-            </td>
-        </tr>
-        <tr>
-            <td align="right" colspan="2">
-                <input type="submit" value="Update User">
+                <input readonly type="text" th:field="*{password}" id="password" placeholder="Password">
             </td>
         </tr>
         </tbody>

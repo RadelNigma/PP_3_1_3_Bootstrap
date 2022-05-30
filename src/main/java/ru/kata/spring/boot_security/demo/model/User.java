@@ -26,7 +26,13 @@ public class User implements UserDetails {
     private int age;
 
     @Column(name = "email")
-    public String email;
+    private String email;
+
+    @Column(name = "password" )
+    private String password;
+
+    @Column(name = "role" )
+    private String role = "USER";
 
     @ManyToMany
     @JoinTable(name = "users_roles",
@@ -34,9 +40,6 @@ public class User implements UserDetails {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Collection<Role> roles;
 
-    public Collection<Role> getRoles() {
-        return roles;
-    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -44,13 +47,8 @@ public class User implements UserDetails {
     }
 
     @Override
-    public String getPassword() {
-        return null;
-    }
-
-    @Override
     public String getUsername() {
-        return null;
+        return email;
     }
 
     @Override
