@@ -25,10 +25,10 @@ public class User implements UserDetails {
     @Column(name = "age")
     private int age;
 
-    @Column(name = "email")
+    @Column(name = "email",nullable = false,unique = true)
     private String email;
 
-    @Column(name = "password" )
+    @Column(name = "password", nullable = false )
     private String password;
 
     @Column(name = "role" )

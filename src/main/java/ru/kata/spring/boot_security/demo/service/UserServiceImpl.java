@@ -45,7 +45,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = findUserByEmail(username);
-        if(user == null){
+        if (user == null) {
             throw new UsernameNotFoundException("Неизвестый пользователь: " + username);
         }
         return org.springframework.security.core.userdetails.User
