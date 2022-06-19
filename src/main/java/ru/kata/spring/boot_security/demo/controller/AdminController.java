@@ -25,6 +25,11 @@ public class AdminController {
         this.passwordEncoder = passwordEncoder;
     }
 
+    @GetMapping("/login")
+    public String viewLoginPage(){
+        return "login";
+    }
+
     @GetMapping("/users")
     public String findAll(Model model) {
         List<User> users = userService.finedAll();

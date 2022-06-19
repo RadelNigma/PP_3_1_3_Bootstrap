@@ -1,0 +1,91 @@
+<!--<!doctype html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    &lt;!&ndash; Required meta tags &ndash;&gt;-->
+<!--    <meta charset="utf-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+
+<!--    &lt;!&ndash; Bootstrap CSS &ndash;&gt;-->
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">-->
+
+<!--    <title>Login Page</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>-->
+
+<!--&lt;!&ndash;<section class="vh-10">&ndash;&gt;-->
+<!--    <div class="container">-->
+<!--        <div class="row justify-content-center align-items-center">-->
+<!--            <div class="col-12 col-md-8 col-lg-6 col-xl-5">-->
+<!--&lt;!&ndash;                <div class="card shadow-2-strong" style="border-radius: 1rem;">&ndash;&gt;-->
+<!--                    <div class="card-body p-5 text-center">-->
+
+<!--                        <h3 class="mb-5">Sign in</h3>-->
+<!--                        <div class="form-outline mb-4">-->
+<!--&lt;!&ndash;                            <label class="form-label" for="typeEmailX-2">Email</label>&ndash;&gt;-->
+<!--                            <input type="email" id="typeEmailX-2" class="form-control form-control-lg" placeholder="Email adress" />-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                        <div class="form-outline mb-4">&ndash;&gt;-->
+<!--                            <input type="password" id="typePasswordX-2" class="form-control form-control-lg" placeholder="Password" />-->
+<!--&lt;!&ndash;                            <label class="form-label" for="typePasswordX-2">Password</label>&ndash;&gt;-->
+<!--                        </div>-->
+<!--                        <div class="d-grid gap-0">-->
+<!--                        <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>-->
+<!--                        </div>-->
+
+<!--                    </div>-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--&lt;!&ndash;</section>&ndash;&gt;-->
+<!--<div class="d-grid gap-0">-->
+<!--    <div class="p-2 bg-light border">Элемент сетки 1</div>-->
+<!--    <div class="p-2 bg-light border">Элемент сетки 2</div>-->
+<!--    <div class="p-2 bg-light border">Элемент сетки 3</div>-->
+<!--</div>-->
+
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Login</title>
+    <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"-->
+    <!--          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"-->
+    <!--          crossorigin="anonymous" />-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container-fluid text-center">
+
+    <form th:action="@{/login}" method="post" style="max-width: 300px; margin: 0 auto;">
+
+        <div th:if="${param.error}">
+            <p class="text-danger">[[${session.SPRING_SECURITY_LAST_EXCEPTION.message}]]</p>
+        </div>
+
+<!--        <div th:if="${param.logout}">-->
+<!--            <p class="text-warning">You have been logged out.</p>-->
+<!--        </div>-->
+
+        <div>
+            <h2 align="left">Please sign in</h2>
+            <p>
+                <input type="email" name="email" class="form-control" placeholder="Email adress" required autofocus/>
+                <input type="password" name="password" class="form-control" placeholder="Password" required/>
+            </p>
+            <div class="d-grid gap-0">
+                <input type="submit" value="Sign in" class="btn btn-primary"/>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>
