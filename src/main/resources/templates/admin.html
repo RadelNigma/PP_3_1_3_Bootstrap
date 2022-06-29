@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!--    <link rel='stylesheet' href='/webjars/bootstrap/5.1.3/css/bootstrap.min.css'>-->
+
+    <!--    <link rel='stylesheet' href='/webjars/bootstrap/css/bootstrap.min.css'>-->
+</head>
+<body>
+
+<!--Шапка-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand">admin@mail.ru wish roles: ADMIN USER</a>
+        <div class="navbar-nav">
+            <a class="nav-link" aria-current="page" href="/login?logout">Logout</a>
+        </div>
+    </div>
+</nav>
+<!--Шапка-->
+
+<!--<div class="container-fluid ">-->
+<div class="row">
+
+    <!--Боковая панель-->
+    <div class="col-2 pt-3">
+        <div class="d-flex align-items-start ">
+            <div class="nav flex-column  nav-pills vw-100" id="v-pills-tab" role="tablist"
+                 aria-orientation="vertical">
+                <!--   Кнопка ADMIN             -->
+                <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="tab"
+                        data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
+                        aria-selected="true">
+                    Admin
+                </button>
+                <!--   Кнопка ADMIN             -->
+                <!--   Кнопка User             -->
+
+                <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="tab"
+                        data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
+                        aria-selected="false">
+                    User
+                </button>
+
+                <!--   Кнопка User             -->
+            </div>
+        </div>
+    </div>
+    <!--Боковая панель-->
+
+    <!--Вкладки       -->
+    <div class="col-10 bg-light d-flex flex-column min-vh-100 d-flex flex-column">
+        <div class="tab-content" id="v-pills-tabContent">
+            <div class="tab-pane fade show active p-3" id="v-pills-home" role="tabpanel"
+                 aria-labelledby="v-pills-home-tab" tabindex="0">
+                <h1>Admin panel</h1>
+                <ul class="nav nav-tabs pt-2" id="myTab" role="tablist">
+                    <!--   Вкладка User table "  -->
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                                data-bs-target="#home-tab-pane" type="button" role="tab"
+                                aria-controls="home-tab-pane" aria-selected="true">
+                            User table
+                        </button>
+                    </li>
+                    <!--   Вкладка User table "  -->
+                    <!--   Вкладка New User "  -->
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
+                                data-bs-target="#profile-tab-pane" type="button" role="tab"
+                                aria-controls="profile-tab-pane" aria-selected="false">
+                            New User
+                        </button>
+                    </li>
+                    <!--   Вкладка New User    -->
+                </ul>
+                <div class="tab-content" id="myTabContent">
+
+                    <!--   Контейнер вкладки User table  -->
+
+                        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel"
+                             aria-labelledby="home-tab" tabindex="0">
+                            <div class="border py-2 px-4 ">
+                            <h5>All users</h5>
+                            </div>
+                            <div class="border px-4 bg-body">
+                                <hr class="opacity-50" style="width: 100%; color: lightgrey;  height: 2px; background-color:lightgray;" />
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Age</th>
+                                    <th>Email</th>
+                                    <th>Role</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Radel</td>
+                                    <td>Nigmatullin</td>
+                                    <td>42</td>
+                                    <td>radelnigma@yandex.ru</td>
+                                    <td>ADMIN USER</td>
+                                    <td>
+                                        <button type="button" class="btn btn-info btn-sm text-white">Edit</button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!--   Контейнер вкладки User table  -->
+                    <!--   Контейнер вкладки New User    -->
+                    <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
+                         tabindex="0">
+                        <h1>FFFFFFFFFFFFF</h1>
+
+                    </div>
+                    <!--   Контейнер вкладки New User    -->
+                </div>
+
+            </div>
+            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab"
+                 tabindex="0">
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--</div>-->
+
+
+<!--Вкладки        -->
+
+<br>
+<!--<div class="container-fluid">-->
+<!--    <div class="d-grid gap-2">-->
+<!--        <button class="btn btn-success btn-md btn-block">Admin</button>-->
+<!--    </div>-->
+<!--</div>-->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <div class="callout">Запустите демо модального окна</div>
+</button>
+
+<!-- Модальное окно -->
+<div class="modal fade" id="profile-tab-pane1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Заголовок модального окна</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+                <div class="callout">Запустите демо модального окна</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                <button type="button" class="btn btn-primary">Сохранить изменения</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Модальное окно -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+</html>

@@ -13,7 +13,7 @@ import ru.kata.spring.boot_security.demo.service.UserService;
 import java.util.List;
 
 @Controller
-@RequestMapping("/admin")
+@RequestMapping()
 public class AdminController {
 
     private final PasswordEncoder passwordEncoder;
@@ -28,6 +28,11 @@ public class AdminController {
     @GetMapping("/login")
     public String viewLoginPage(){
         return "login";
+    }
+
+    @GetMapping("/admin")
+    public String viewAdminPage(){
+        return "admin";
     }
 
     @GetMapping("/users")
