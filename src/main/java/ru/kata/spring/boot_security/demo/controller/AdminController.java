@@ -25,15 +25,26 @@ public class AdminController {
         this.passwordEncoder = passwordEncoder;
     }
 
-    @GetMapping("/login")
+    @GetMapping("/")
     public String viewLoginPage(){
         return "login";
     }
-
+//    @PathVariable("id") Long id,
     @GetMapping("/admin")
-    public String viewAdminPage(){
+    public String viewAdminPage( Model model, User user){
+        List<User> users = userService.finedAll();
+        model.addAttribute("users", users);
+//        User user1 = userService.findById(id);
+//        model.addAttribute("user", user1);
         return "admin";
     }
+
+//    @PostMapping("/admin")
+//    public String postAdminPage(User user) {
+//        user.setPassword(passwordEncoder.encode(user.getPassword()));
+//        userService.saveUser(user);
+//        return "admin";
+//    }
 
     @GetMapping("/users")
     public String findAll(Model model) {
@@ -51,7 +62,7 @@ public class AdminController {
     public String createUser(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         userService.saveUser(user);
-        return "redirect:/admin/users";
+        return "redirect:/admin";
     }
 
     @GetMapping("/user-delete/{id}")
@@ -70,7 +81,7 @@ public class AdminController {
     @PostMapping("/user-update")
     public String updateUser(User user) {
         userService.saveUser(user);
-        return "redirect:/admin/users";
+        return "redirect:/admin";
     }
 
 }
