@@ -70,7 +70,7 @@ public class AdminController {
         userService.deleteById(id);
         return "redirect:/admin/users";
     }
-
+222
     @GetMapping("/user-update/{id}")
     public String updateUserForm(@PathVariable("id") Long id, Model model) {
         User user = userService.findById(id);
